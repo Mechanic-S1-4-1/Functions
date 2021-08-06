@@ -15,7 +15,8 @@ int a; // глобальная переменная, ее видят все фу
 const int ROWS = 5;
 const int COLS = 8;
 
-void FillRand(int arr[], const int n);
+template <typename T> // T - имя шаблонного типа
+void FillRand(T arr[], const int n);
 void FillRand(double arr[], const int n);
 void FillRand(float arr[], const int n);
 void FillRand(char arr[], const int n);
@@ -126,7 +127,8 @@ void main()
 	Print(i_arr_2,ROWS,COLS);
 }
 
-void FillRand(int arr[], const int n)
+template <typename T>
+void FillRand(T arr[], const int n)
 {
 	for (int i = 0;i < n;i++) {
 		arr[i] = rand()%100; // фукция rand() возвращает псевдослучайное число,
